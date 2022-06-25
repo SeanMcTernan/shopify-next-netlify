@@ -1,13 +1,12 @@
 import Link from 'next/link';
 
 export default function Header() {
+  const logo = require('../public/lflogo.svg').default;
   return (
     <header className="app-header">
-      <h1>
-        <Link href="/">
-          <a>Shoperoni</a>
-        </Link>
-      </h1>
+      <div>
+        <img src={'https://www.lifefitness.com/resource/crblob/1164/260e4ad4ec1b7642864fbe5a149d147c/logo-svg-data.svg'} alt={''} />
+      </div>
       <nav className="main-nav">
         <ul>
           <li className="main-nav-item">

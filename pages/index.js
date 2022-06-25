@@ -8,7 +8,7 @@ export default function Home({ products }) {
   return (
     <>
       <Head>
-        <title>Cheese and Meat Shop</title>
+        <title>Fitness & Exercise Equipment for Your Facility or Home | Life Fitness</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
