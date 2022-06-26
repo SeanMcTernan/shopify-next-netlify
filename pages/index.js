@@ -6,7 +6,6 @@ import { getProductList } from "@api/getProductList";
 import Script from 'next/script'
 
 export default function Home({ products }) {
-  const key = process.env.ALGOLIA_FRONTEND_API_KEY
   return (
     <>
       <Script
@@ -15,7 +14,7 @@ export default function Home({ products }) {
         onLoad={() => {
           algoliasearchNetlify({
             appId: 'VXS80WCPYY',
-            apiKey: process.env.ALGOLIA_FRONTEND_API_KEY,
+            apiKey: '8b4da982ab160dd6782abe7ff77104c8',
             siteId: '6e0fc743-62a2-41f9-8b6b-de54d5921004',
             branch: 'main',
             selector: 'div#search',
