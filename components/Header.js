@@ -14,15 +14,12 @@ export default function Header() {
               <a>All Products</a>
             </Link>
           </li>
-          {/* <li className="main-nav-item">
-            <Link href="/cheeses"><a>Cheeses</a></Link>
+          <li className="main-nav-item">
+            <Link href="/"><a>About</a></Link>
           </li>
           <li className="main-nav-item">
-            <Link href="/meats"><a>Meats</a></Link>
+            <Link href="/"><a>Contact</a></Link>
           </li>
-          <li className="main-nav-item">
-            <Link href="/boards"><a>Boards</a></Link>
-          </li> */}
           <li className="main-nav-item">
             <Link href="/cart">
               <a className="cart cartLink">Shopping Cart</a>

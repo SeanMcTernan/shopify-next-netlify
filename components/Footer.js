@@ -1,4 +1,12 @@
 export default function Footer() {
+  const { ALGOLIA_API_KEY } = process.env;
+  const body = {
+    appId: 'VXS80WCPYY',
+    apiKey: ALGOLIA_API_KEY,
+    siteId: '6e0fc743-62a2-41f9-8b6b-de54d5921004',
+    branch: 'main',
+    selector: 'div#search',
+  };
   return (
     <>
       <footer>
@@ -7,34 +15,10 @@ export default function Footer() {
             <a href="https://www.lifefitness.com/en-us/racks-rigs/hd-athletic">HD ATHLETIC</a>
           </h2>
         </section>
-        <section className="app-footer-links">
-          <ul>
-            <li>About</li>
-            <li>Company</li>
-            <li>Locations</li>
-            <li>Contact</li>
-            <li>Hours</li>
-          </ul>
-          <ul>
-            <li>Twitter</li>
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>LinkedIn</li>
-          </ul>
-          <div className="newsletter">
-            <h2 className="newsletter-title">Sign up for our newsletter:</h2>
-            <input
-              className="newsletter-input"
-              type="email"
-              placeholder="Enter your email"
-            />
-          </div>
-        </section>
-        <div className="project-credit">
-          <p>
-            <small>&copy; {new Date().getFullYear()} LifeFitness</small>
-          </p>
-        </div>
+        <p className="text-muted" style={{ textAlign: "center" }}>
+          <small>&copy; {new Date().getFullYear()} LifeFitness</small>
+        </p>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
       </footer>
     </>
   );
