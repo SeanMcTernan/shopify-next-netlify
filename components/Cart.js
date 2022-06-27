@@ -7,7 +7,7 @@ export default function Cart() {
   const [showProducts, setShowProducts] = useState(true);
   const [products, setProducts] = useState([]);
   const [cost, setCost] = useState({});
-  const { cartId, setCartId } = useAppContext();
+  const { cartId, setCartId, checkoutUrl } = useAppContext();
 
   useEffect(async () => {
     const localCart = cartId;
@@ -40,6 +40,13 @@ export default function Cart() {
             removeItem={setProducts}
           />
           <CartTotal cost={cost} />
+          <button
+            onClick={() => {
+              window.open(checkoutUrl);;
+            }}
+          >
+            Checkout on Shopify
+          </button>
         </div>
       ) : (
         <div className="cart-page-message">

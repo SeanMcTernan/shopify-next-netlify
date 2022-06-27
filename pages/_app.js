@@ -1,6 +1,7 @@
 import { AppWrapper } from '../state.js'; // import based on where you put it
 import '@styles/globals.css';
 import Script from 'next/script'
+import { useEffect } from 'react';
 
 export function Application({ Component, pageProps }) {
   return (
