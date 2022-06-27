@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import Script from 'next/script'
-import { AppContext } from 'state';
-import { useEffect, useContext } from 'react';
+import { useAppContext } from 'state';
 
 export default function Header(props) {
-  const { cartItems, setCartItems } = useContext(AppContext);
+  const { itemQuantities } = useAppContext();
   return (
     <header className="app-header">
       <Script
@@ -43,7 +42,11 @@ export default function Header(props) {
           </li>
           <li className="main-nav-item">
             <Link href="/cart">
-              <a className="cart cartLink">Shopping Cart({cartItems})</a>
+              {itemQuantities > 0 ? (
+                <a className="cart cartLink">Shopping Cart ({itemQuantities})</a>
+              ) : (
+                <a className="cart cartLink">Shopping Cart</a>
+              )}
             </Link>
           </li>
         </ul>

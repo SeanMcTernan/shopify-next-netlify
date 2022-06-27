@@ -4,10 +4,10 @@ const AppContext = createContext();
 
 function AppWrapper({ children }) {
   let [cartId, setCartId] = useState(null);
-  let [cartItems, setCartItems] = useState(null);
+  let [itemQuantities, setItemQuantities] = useState(null);
 
   return (
-    <AppContext.Provider value={{ cartId, setCartId, cartItems, setCartItems }}>
+    <AppContext.Provider value={{ cartId, setCartId, itemQuantities, setItemQuantities }}>
       {children}
     </AppContext.Provider>
   );

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { formatPrice } from "../utilityFunctions";
-import { Appcontext, useAppContext } from "../state";
+import { useAppContext } from "../state";
 import { useContext } from 'react';
 
 function getCurrentVariantObject(vars, id) {
@@ -56,7 +56,7 @@ export default function ProductPageContent({ product }) {
   // Cost of the chosen variant
   const [cost, setCost] = useState("");
 
-  const { cartId, setCartId, cartItems, setCartItems } = useAppContext();
+  const { cartId, setCartId, itemQuantities, setItemQuantities } = useAppContext();
 
   useEffect(() => {
     let variantPrice = getCurrentVariantObject(vars, chosenVariant).node.priceV2
@@ -84,8 +84,8 @@ export default function ProductPageContent({ product }) {
 
     const data = await cartResponse.json();
     setCartId(data.id);
-    cartItems = cartItems + quantity;
-    setCartItems(cartItems);
+    itemQuantities = itemQuantities + quantity;
+    setItemQuantities(itemQuantities);
     return data;
   };
 
