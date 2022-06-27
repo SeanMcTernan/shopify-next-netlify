@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Script from 'next/script'
 
 export default function Header() {
-  const key = require('../public/lflogo.svg').default;
   return (
     <header className="app-header">
       <Script
