@@ -3,12 +3,13 @@ import Header from '@components/Header';
 import Footer from '@components/Footer';
 import Cart from '@components/Cart';
 import { useAppContext } from '../state';
+import Script from 'next/script'
 
 export default function CartPage() {
   return (
     <>
       <Head>
-        <title>Shoperoni | Cart</title>
+        <title>LifeFitness | Cart</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

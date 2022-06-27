@@ -18,7 +18,6 @@ export default function Footer() {
         <p className="text-muted" style={{ textAlign: "center" }}>
           <small>&copy; {new Date().getFullYear()} LifeFitness</small>
         </p>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
       </footer>
     </>
   );
