@@ -2,10 +2,9 @@ import { useState, createContext, useContext } from 'react';
 
 const AppContext = createContext();
 
-export function AppWrapper({ children }) {
+function AppWrapper({ children }) {
   let [cartId, setCartId] = useState(null);
   let [cartItems, setCartItems] = useState(null);
-  cartItems = 0;
 
   return (
     <AppContext.Provider value={{ cartId, setCartId, cartItems, setCartItems }}>
@@ -14,6 +13,9 @@ export function AppWrapper({ children }) {
   );
 }
 
-export function useAppContext() {
+function useAppContext() {
   return useContext(AppContext);
 }
+
+
+export { AppContext, AppWrapper, useAppContext };

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { formatPrice } from "../utilityFunctions";
-import { useAppContext } from "../state";
+import { Appcontext, useAppContext } from "../state";
+import { useContext } from 'react';
 
 function getCurrentVariantObject(vars, id) {
   return vars.filter((v) => {
@@ -83,7 +84,7 @@ export default function ProductPageContent({ product }) {
 
     const data = await cartResponse.json();
     setCartId(data.id);
-    cartItems = cartItems + 1;
+    cartItems = cartItems + quantity;
     setCartItems(cartItems);
     return data;
   };
