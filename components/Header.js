@@ -37,7 +37,7 @@ export default function Header(props) {
           </li>
         </ul>
       </nav>
-      <div id="search"></div>
+      <div id="search" style={{ paddingTop: 20 }}></div>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
     </header>
   );

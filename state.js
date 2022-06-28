@@ -19,4 +19,4 @@ function useAppContext() {
 }
 
 
-export { AppContext, AppWrapper, useAppContext };
+export { AppWrapper, useAppContext };
