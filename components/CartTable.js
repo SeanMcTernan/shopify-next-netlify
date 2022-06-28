@@ -1,7 +1,9 @@
 import { formatPrice, itemTotal } from "../utilityFunctions";
+import { useAppContext } from "../state";
 
 export default function CartTable({ cartItems, cartId, removeItem }) {
-  let removeItemFromCart = (itemId) => {
+  const { itemQuantities, setItemQuantities } = useAppContext();
+  let removeItemFromCart = (itemId, quantity) => {
     fetch("/.netlify/functions/remove-from-cart", {
       method: "POST",
       body: JSON.stringify({
@@ -11,9 +13,11 @@ export default function CartTable({ cartItems, cartId, removeItem }) {
     })
       .then((response) => response.json())
       .then((response) => {
+
         console.log("--- Item deleted ---");
 
         removeItem(response.lines.edges);
+        setItemQuantities(itemQuantities - quantity)
         return response;
       });
   };
@@ -55,7 +59,7 @@ export default function CartTable({ cartItems, cartId, removeItem }) {
               <td className="cart-table-cell">
                 <button
                   onClick={() => {
-                    removeItemFromCart(item.id);
+                    removeItemFromCart(item.id, item.quantity);
                   }}
                 >
                   Remove Item

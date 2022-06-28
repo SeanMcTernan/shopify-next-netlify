@@ -2,16 +2,20 @@ import { useState, createContext, useContext } from 'react';
 
 const AppContext = createContext();
 
-export function AppWrapper({ children }) {
+function AppWrapper({ children }) {
   let [cartId, setCartId] = useState(null);
+  let [itemQuantities, setItemQuantities] = useState(null);
 
   return (
-    <AppContext.Provider value={{ cartId, setCartId }}>
+    <AppContext.Provider value={{ cartId, setCartId, itemQuantities, setItemQuantities }}>
       {children}
     </AppContext.Provider>
   );
 }
 
-export function useAppContext() {
+function useAppContext() {
   return useContext(AppContext);
 }
+
+
+export { AppContext, AppWrapper, useAppContext };

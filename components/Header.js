@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import { useAppContext } from 'state';
 
-export default function Header() {
-  const logo = require('../public/lflogo.svg').default;
+export default function Header(props) {
+  const { itemQuantities } = useAppContext();
   return (
     <header className="app-header">
       <div>
@@ -11,6 +12,11 @@ export default function Header() {
         <ul>
           <li className="main-nav-item">
             <Link href="/">
+              <a>Top Products</a>
+            </Link>
+          </li>
+          <li className="main-nav-item">
+            <Link href="/allProducts">
               <a>All Products</a>
             </Link>
           </li>
@@ -22,11 +28,17 @@ export default function Header() {
           </li>
           <li className="main-nav-item">
             <Link href="/cart">
-              <a className="cart cartLink">Shopping Cart</a>
+              {itemQuantities > 0 ? (
+                <a className="cart cartLink">Shopping Cart ({itemQuantities})</a>
+              ) : (
+                <a className="cart cartLink">Shopping Cart</a>
+              )}
             </Link>
           </li>
         </ul>
       </nav>
+      <div id="search"></div>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
     </header>
   );
 }
