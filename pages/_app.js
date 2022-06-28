@@ -17,7 +17,7 @@ export function Application({ Component, pageProps }) {
             siteId: '6e0fc743-62a2-41f9-8b6b-de54d5921004',
             branch: 'main',
             selector: 'div#search',
-          })
+          }, [])
         }}
       />
     </AppWrapper>

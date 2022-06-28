@@ -32,7 +32,6 @@ export default function CartTable({ cartItems, cartId, removeItem }) {
         console.log({ result });
         return "No results found.";
       }
-      console.log(`Set ${result.data.cart.checkoutUrl} to state`);
       setCheckoutUrl(result.data.cart.checkoutUrl)
       return result.data;
     } catch (error) {
